@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KSK Digital LLC</title>
-  <meta name="description" content="KSK Digital LLC — independent software company. Makers of Wear & When, the multilingual outfit-planning app." />
+  <meta name="description" content="KSK Digital LLC — independent software, thoughtfully made. Based in Stevens Point, Wisconsin. Makers of Indosso, the multilingual wardrobe and outfit-planning app." />
   <style>
     * { box-sizing: border-box; }
     html { height: 100%; }
     body { min-height: 100%; }
 
     :root {
-      /* Tokens lifted directly from Wear & When */
+      /* Tokens lifted directly from the Indosso app */
       --font-main: Georgia, serif;
       --font-label: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
 
@@ -41,7 +41,6 @@
       padding: 0;
       font-family: var(--font-main);
       position: relative;
-      /* Same flat base + tiled noise as Wear & When */
       background:
         radial-gradient(rgba(90,80,70,0.02) 1px, transparent 1px),
         radial-gradient(rgba(90,80,70,0.02) 1px, transparent 1px),
@@ -53,7 +52,6 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Noise texture overlay — fixed, exactly as in Wear & When */
     body::before {
       content: "";
       position: fixed;
@@ -65,7 +63,6 @@
       mix-blend-mode: multiply;
     }
 
-    /* Gradient washes — fixed, exactly as in Wear & When */
     body::after {
       content: "";
       position: fixed;
@@ -117,6 +114,17 @@
       margin: 0 0 14px;
     }
 
+    h3.principle-title,
+    h3.product-title {
+      font-family: var(--font-main);
+      font-weight: normal;
+      font-style: italic;
+      font-size: 1.08rem;
+      color: var(--text-primary);
+      margin: 0 0 8px;
+      line-height: 1.4;
+    }
+
     p {
       margin: 0 0 12px;
       color: var(--text-main);
@@ -125,11 +133,6 @@
     }
     p:last-child { margin-bottom: 0; }
 
-    .product-name {
-      color: var(--text-primary);
-      font-style: italic;
-    }
-
     .card {
       background: var(--bg-soft);
       border: 1px solid var(--border-soft);
@@ -137,19 +140,51 @@
       padding: var(--space-lg) var(--space-lg);
     }
 
-    .products a {
+    a.text-link,
+    .products a,
+    .support a {
       color: var(--text-primary);
       text-decoration: none;
       border-bottom: 1px solid var(--border-strong);
       transition: border-color 0.2s, color 0.2s;
     }
-    .products a:hover {
+    a.text-link:hover,
+    .products a:hover,
+    .support a:hover {
       border-bottom-color: var(--text-primary);
+    }
+
+    .principle-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .principle-grid .card {
+      padding: 20px;
+    }
+    .principle-grid p {
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    .product-langs {
+      font-family: var(--font-label);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+      margin-top: 14px;
+    }
+
+    .support-note {
+      font-family: var(--font-label);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 92px 1fr;
+      grid-template-columns: 150px 1fr;
       gap: 14px 20px;
       font-family: var(--font-main);
       font-size: 0.98rem;
@@ -176,11 +211,6 @@
     }
     .contact-grid a:hover { border-bottom-color: var(--text-primary); }
 
-    .phone-pending {
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
     address { font-style: normal; }
 
     footer {
@@ -191,6 +221,25 @@
       font-size: 0.75rem;
       color: var(--text-muted);
       letter-spacing: 0.04em;
+      line-height: 1.9;
+    }
+
+    footer nav { margin-top: 6px; }
+
+    footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-soft);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    footer a:hover {
+      color: var(--text-primary);
+      border-bottom-color: var(--text-primary);
+    }
+
+    .footer-sep {
+      margin: 0 8px;
+      color: var(--border-strong);
     }
 
     @media (max-width: 480px) {
@@ -199,6 +248,7 @@
       header { margin-bottom: 44px; }
       section { margin-bottom: 36px; }
       .card { padding: 20px; }
+      .principle-grid { grid-template-columns: 1fr; }
       .contact-grid {
         grid-template-columns: 1fr;
         gap: 4px;
@@ -212,20 +262,70 @@
   <main>
     <header>
       <h1 class="wordmark">KSK Digital LLC</h1>
-      <p class="tagline">Independent software company</p>
+      <p class="tagline">Independent software, thoughtfully made.</p>
     </header>
 
     <section class="about">
       <h2>About</h2>
       <div class="card">
-        <p>KSK Digital LLC was founded in 2026. We build software that respects our users&rsquo; time, data, and privacy.</p>
+        <p>KSK Digital LLC is an independent, founder-owned software company based in Stevens Point, Wisconsin. We design and build consumer applications for the web and mobile devices.</p>
+        <p>The company was founded in 2026 on a simple conviction: good software should respect the people who use it &mdash; their time, their data, and their privacy.</p>
+        <p>We do not sell advertising. We do not sell personal data. We build focused, useful products without the tracking, pressure, and unnecessary noise that have become common in consumer software.</p>
       </div>
     </section>
 
     <section class="products">
       <h2>Products</h2>
       <div class="card">
-        <p><span class="product-name">Wear &amp; When</span> &mdash; a calm, multilingual decision-support app for getting dressed. It works from the clothes you own and the context of your day &mdash; weather, occasion, activity &mdash; to help you decide what to wear and what to pack. Available at <a href="https://wearandwhen.app">wearandwhen.app</a>.</p>
+        <h3 class="product-title">Indosso</h3>
+        <p>A calm, multilingual wardrobe and outfit-planning app built around the clothes you already own.</p>
+        <p>Indosso considers the context of your day &mdash; including the weather, occasion, and activity &mdash; to help you decide what to wear. It also supports trip planning and packing, making it easier to prepare for more than just today.</p>
+        <p>Indosso is available on the web at <a href="https://indosso.app">indosso.app</a>, with native mobile apps in development.</p>
+        <p class="product-langs">Available in English, German, Spanish, French, Italian, Japanese, and Portuguese.</p>
+      </div>
+    </section>
+
+    <section class="principles">
+      <h2>How We Build</h2>
+      <div class="principle-grid">
+        <div class="card">
+          <h3 class="principle-title">Privacy first</h3>
+          <p>We collect only what a feature genuinely needs, and we explain it plainly. We do not sell personal information, use advertising networks, or build marketing profiles from people&rsquo;s behavior.</p>
+          <p>Your closet belongs to you. Our role is to keep it private, secure, and useful.</p>
+        </div>
+        <div class="card">
+          <h3 class="principle-title">Calm by design</h3>
+          <p>No streaks. No badges. No manufactured urgency.</p>
+          <p>Our software is designed to be a tool you pick up when it helps and put down when you are finished.</p>
+        </div>
+        <div class="card">
+          <h3 class="principle-title">Multilingual from the beginning</h3>
+          <p>Indosso is designed and maintained in seven languages. Localization is part of the product itself &mdash; not something added after the English version is complete.</p>
+        </div>
+        <div class="card">
+          <h3 class="principle-title">Useful before persuasive</h3>
+          <p>A product should demonstrate its value through what it does, not through pressure, interruption, or artificial limitations.</p>
+          <p>We aim to make software that is clear about what it offers, what it costs, and how it handles the information entrusted to it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="founder">
+      <h2>Founder</h2>
+      <div class="card">
+        <p>KSK Digital was founded by Kevin Kimmel, a designer who develops the company&rsquo;s products from beginning to end &mdash; from product direction and interface design through engineering, writing, and localization.</p>
+        <p>Indosso began as a personal solution to an ordinary but persistent question: <em>What should I wear?</em></p>
+        <p>Through continuous refinement, it grew into a complete wardrobe, outfit-planning, and travel-packing application designed to make that decision easier without replacing the user&rsquo;s own judgment or personal taste. That principle is also reflected in the product itself: Indosso offers suggestions, but it does not score or judge a person&rsquo;s choices.</p>
+      </div>
+    </section>
+
+    <section class="support">
+      <h2>Support</h2>
+      <div class="card">
+        <p>Support for Indosso is handled directly by KSK Digital.</p>
+        <p>For product assistance, account questions, or technical issues, email <a href="mailto:support@indosso.app">support@indosso.app</a>. Please allow one to two business days for a response.</p>
+        <p>For privacy questions or data requests, email <a href="mailto:privacy@indosso.app">privacy@indosso.app</a>.</p>
+        <p class="support-note">Help resources, account controls, and legal documents are also available within Indosso.</p>
       </div>
     </section>
 
@@ -233,17 +333,31 @@
       <h2>Contact</h2>
       <div class="card">
         <dl class="contact-grid">
-          <dt>Email</dt>
+          <dt>Business inquiries</dt>
           <dd><a href="mailto:founder@kskdigital.app">founder@kskdigital.app</a></dd>
 
+          <dt>Indosso support</dt>
+          <dd><a href="mailto:support@indosso.app">support@indosso.app</a></dd>
+
+          <dt>Privacy inquiries</dt>
+          <dd><a href="mailto:privacy@indosso.app">privacy@indosso.app</a></dd>
+
           <dt>Phone</dt>
-          <dd class="phone-pending">(414) 395-0043</dd>
+          <dd>(414) 395-0043</dd>
+
+          <dt>Location</dt>
+          <dd><address>Stevens Point, Wisconsin, United States</address></dd>
         </dl>
       </div>
     </section>
 
     <footer>
-      &copy; 2026 KSK Digital LLC &middot; All rights reserved
+      &copy; 2026 KSK Digital LLC &middot; A Wisconsin limited liability company &middot; All rights reserved
+      <nav>
+        <a href="/privacy.html">Privacy Policy</a>
+        <span class="footer-sep">&middot;</span>
+        <a href="/terms.html">Terms of Use</a>
+      </nav>
     </footer>
   </main>
 </body>
